@@ -9,8 +9,6 @@ class FetchNewsetBooksUseCase extends UseCase<List<BookEntitiy>, NoParam> {
 
   FetchNewsetBooksUseCase(this.homeRepo);
 
-
-
   @override
   Future<List<Either<Failure, List<BookEntitiy>>>> call(
       [NoParam? param]) async {

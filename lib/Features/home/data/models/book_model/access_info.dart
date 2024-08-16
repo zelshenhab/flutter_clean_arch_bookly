@@ -1,9 +1,7 @@
-import 'package:equatable/equatable.dart';
-
 import 'epub.dart';
 import 'pdf.dart';
 
-class AccessInfo extends Equatable {
+class AccessInfo {
   final String? country;
   final String? viewability;
   final bool? embeddable;
@@ -58,7 +56,6 @@ class AccessInfo extends Equatable {
         'quoteSharingAllowed': quoteSharingAllowed,
       };
 
-  @override
   List<Object?> get props {
     return [
       country,

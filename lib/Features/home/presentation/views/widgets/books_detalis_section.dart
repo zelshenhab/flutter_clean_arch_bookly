@@ -40,7 +40,7 @@ class BookDetalisSection extends StatelessWidget {
         ),
         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
-          rating: book.volumeInfo.maturityRating ?? '',
+          rating: book.volumeInfo.maturityRating??0,
           count: book.volumeInfo.pageCount ?? 0,
         ),
         const SizedBox(
