@@ -16,7 +16,7 @@ class HomeLocalDataSourcesImpl extends HomeRemoteDataSources {
 
   @override
   List<BookEntitiy> fetchNewestBooks() {
-    // TODO: implement fetchNewestBooks
-    throw UnimplementedError();
+    var box = Hive.box<BookEntitiy>(kNewestBox);
+    return box.values.toList();
   }
 }
