@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'book_entitiy.dart';
+part of 'book_entity.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class BookEntitiyAdapter extends TypeAdapter<BookEntitiy> {
+class BookEntityAdapter extends TypeAdapter<BookEntity> {
   @override
   final int typeId = 0;
 
   @override
-  BookEntitiy read(BinaryReader reader) {
+  BookEntity read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return BookEntitiy(
+    return BookEntity(
       bookId: fields[0] as String,
       image: fields[1] as String?,
       price: fields[2] as num?,
@@ -27,7 +27,7 @@ class BookEntitiyAdapter extends TypeAdapter<BookEntitiy> {
   }
 
   @override
-  void write(BinaryWriter writer, BookEntitiy obj) {
+  void write(BinaryWriter writer, BookEntity obj) {
     writer
       ..writeByte(6)
       ..writeByte(0)
@@ -50,7 +50,7 @@ class BookEntitiyAdapter extends TypeAdapter<BookEntitiy> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is BookEntitiyAdapter &&
+      other is BookEntityAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -1,23 +1,23 @@
 import 'package:flutter_bookly/Features/home/data/models/book_model/book_model.dart';
-import 'package:flutter_bookly/Features/home/domain/entities/book_entitiy.dart';
+import 'package:flutter_bookly/Features/home/domain/entities/book_entity.dart';
 import 'package:flutter_bookly/constants.dart';
 import 'package:flutter_bookly/core/utils/api_service.dart';
 import 'package:flutter_bookly/core/utils/function/save_books.dart';
 
-abstract class HomeRemoteDataSources {
-  Future<List<BookEntitiy>> fetchFeaturedBooks();
-  Future<List<BookEntitiy>> fetchNewestBooks();
+abstract class HomeRemoteDataSource {
+  Future<List<BookEntity>> fetchFeaturedBooks();
+  Future<List<BookEntity>> fetchNewestBooks();
 }
 
-class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources {
+class HomeRemoteDataSourcesImpl extends HomeRemoteDataSource {
   final ApiService apiService;
 
   HomeRemoteDataSourcesImpl(this.apiService);
   @override
-  Future<List<BookEntitiy>> fetchFeaturedBooks() async {
+  Future<List<BookEntity>> fetchFeaturedBooks() async {
     var data = await apiService.get(
         endPoint: "volumes?Filtering=free-ebooks&q=subject:Programming");
-    List<BookEntitiy> books = getBooksList(data);
+    List<BookEntity> books = getBooksList(data);
 
     saveBooksData(books, kFeaturedBox);
 
@@ -25,19 +25,19 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources {
   }
 
   @override
-  Future<List<BookEntitiy>> fetchNewestBooks() async {
+  Future<List<BookEntity>> fetchNewestBooks() async {
     var data = await apiService.get(
         endPoint:
             "volumes?Filtering=free-ebooks&sorting=newest&q=subject:Programming");
 
-    List<BookEntitiy> books = getBooksList(data);
-    saveBooksData(books, kFeaturedBox);
+    List<BookEntity> books = getBooksList(data);
+    saveBooksData(books, kNewestBox);
 
     return books;
   }
 
-  List<BookEntitiy> getBooksList(Map<String, dynamic> data) {
-    List<BookEntitiy> books = [];
+  List<BookEntity> getBooksList(Map<String, dynamic> data) {
+    List<BookEntity> books = [];
     //كل  bookMap جوا ال data وضيف عليها
     for (var bookMap in data['items']) {
       books.add(BookModel.fromJson(bookMap));

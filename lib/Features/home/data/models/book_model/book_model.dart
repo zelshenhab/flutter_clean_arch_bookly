@@ -1,10 +1,10 @@
-import 'package:flutter_bookly/Features/home/domain/entities/book_entitiy.dart';
+import 'package:flutter_bookly/Features/home/domain/entities/book_entity.dart';
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
-class BookModel extends BookEntitiy {
+class BookModel extends BookEntity {
   final String? kind;
   final String? id;
   final String? etag;

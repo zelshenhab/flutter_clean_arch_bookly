@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
-part 'book_entitiy.g.dart';
+part 'book_entity.g.dart';
 
 @HiveType(typeId: 0)
-class BookEntitiy {
+class BookEntity {
   @HiveField(0)
   final String bookId;
   @HiveField(1)
@@ -16,7 +16,7 @@ class BookEntitiy {
   @HiveField(5)
   final String? authorName;
   @HiveField(6)
-  BookEntitiy(
+  BookEntity(
       {required this.bookId,
       required this.image,
       required this.price,

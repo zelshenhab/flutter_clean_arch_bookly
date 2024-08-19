@@ -13,7 +13,7 @@ class NewsetBooksCubit extends Cubit<NewsetBooksState> {
     emit(NewsetBooksLoading());
     var result = await homeRepo.fetchNewsetBooks();
     result.fold((failure) {
-      emit(NewsetBooksFailure(failure.errMessage));
+      emit(NewsetBooksFailure(failure.message));
     }, (books) {
       emit(NewsetBooksSuccess(books));
     });
