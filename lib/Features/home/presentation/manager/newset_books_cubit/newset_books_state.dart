@@ -18,7 +18,7 @@ final class NewsetBooksFailure extends NewsetBooksState {
 }
 
 final class NewsetBooksSuccess extends NewsetBooksState {
-  final List<BookModel> books;
+  final List<BookEntity> books;
 
   const NewsetBooksSuccess(this.books);
 }

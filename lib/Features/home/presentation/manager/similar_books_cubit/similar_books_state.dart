@@ -12,7 +12,7 @@ final class SimilarBooksInitial extends SimilarBooksState {}
 final class SimilarBooksLoading extends SimilarBooksState {}
 
 final class SimilarBooksSuccess extends SimilarBooksState {
-  final List<BookModel> bookModel;
+  final List<BookEntity> bookModel;
 
   const SimilarBooksSuccess(this.bookModel);
 }
