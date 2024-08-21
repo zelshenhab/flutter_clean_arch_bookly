@@ -5,13 +5,12 @@ import 'package:flutter_bookly/Features/home/data/data_sources/home_remote_data_
 import 'package:flutter_bookly/Features/home/domain/entities/book_entity.dart';
 import 'package:flutter_bookly/Features/home/domain/repos/home_repo.dart';
 import 'package:flutter_bookly/core/errors/failures.dart';
-import 'package:flutter_bookly/core/utils/api_service.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;
   final HomeLocalDataSource homeLocalDataSource;
 
-  HomeRepoImpl(ApiService apiService,
+  HomeRepoImpl(
       {required this.homeRemoteDataSource, required this.homeLocalDataSource});
 
   @override

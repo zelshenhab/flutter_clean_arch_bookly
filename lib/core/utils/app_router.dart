@@ -30,7 +30,9 @@ abstract class AppRouter {
       GoRoute(
         path: kBookDetalisView,
         builder: (context, state) => BlocProvider(
-          create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) => SimilarBooksCubit(
+            getIt.get<HomeRepoImpl>(),
+          ),
           child: BookDetalisView(
             bookModel: state.extra as BookModel,
           ),
